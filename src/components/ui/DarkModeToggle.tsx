@@ -3,7 +3,15 @@
 import { useTheme } from "@/hooks/useTheme";
 
 export function DarkModeToggle() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme, mounted } = useTheme();
+
+  if (!mounted) {
+    return (
+      <button className="p-2 rounded-lg hover:bg-foreground/5 transition-colors" aria-label="Tema">
+        <div className="w-5 h-5" />
+      </button>
+    );
+  }
 
   return (
     <button
