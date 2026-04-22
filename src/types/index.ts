@@ -7,6 +7,14 @@ export interface Project {
   imageUrl: string;
   projectUrl: string;
   tags: string[];
+  // Dialog-specific fields (all optional)
+  images?: string[];
+  about?: string;
+  problem?: string;
+  techStack?: string[];
+  sourceUrl?: string;
+  demoUrl?: string;
+  year?: string;
 }
 
 export interface Technology {
