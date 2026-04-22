@@ -4,6 +4,7 @@ interface ButtonProps {
   variant?: "primary" | "secondary";
   children: React.ReactNode;
   href?: string;
+  download?: string | boolean;
   onClick?: () => void;
   className?: string;
 }
@@ -12,6 +13,7 @@ export function Button({
   variant = "primary",
   children,
   href,
+  download,
   onClick,
   className,
 }: ButtonProps) {
@@ -29,7 +31,7 @@ export function Button({
 
   if (href) {
     return (
-      <a href={href} className={classes}>
+      <a href={href} download={download} className={classes}>
         {children}
       </a>
     );

@@ -18,7 +18,7 @@ export function AboutMe() {
               <br />
               <span className="text-accent">{siteConfig.name}</span>
             </h2>
-            <Button variant="secondary" href={siteConfig.resumeUrl}>
+            <Button variant="secondary" href={siteConfig.resumeUrl} download="CV - Salvador Miron Ramos.pdf">
               Download Resume
               <svg
                 xmlns="http://www.w3.org/2000/svg"
