@@ -88,7 +88,12 @@ export function ProjectDialog({ project, onClose }: ProjectDialogProps) {
                   {project.category}
                 </span>
                 <span className="opacity-50 shrink-0 hidden sm:inline">/</span>
-                <span className="text-accent truncate">{project.name}</span>
+                <span
+                  className="truncate"
+                  style={{ color: project.logoColor ?? "var(--accent)" }}
+                >
+                  {project.name}
+                </span>
               </div>
               <button
                 onClick={onClose}
@@ -145,7 +150,7 @@ export function ProjectDialog({ project, onClose }: ProjectDialogProps) {
                         <img
                           src={src}
                           alt={`${project.name} screenshot ${i + 1}`}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain p-4"
                         />
                       ) : (
                         <div
@@ -266,11 +271,15 @@ export function ProjectDialog({ project, onClose }: ProjectDialogProps) {
                     <div
                       className="absolute inset-0"
                       style={{
-                        background:
-                          "radial-gradient(circle at 30% 20%, rgba(249,115,22,0.25), transparent 70%)",
+                        background: project.logoColor
+                          ? `radial-gradient(circle at 30% 20%, ${project.logoColor}40, transparent 70%)`
+                          : "radial-gradient(circle at 30% 20%, rgba(249,115,22,0.25), transparent 70%)",
                       }}
                     />
-                    <span className="relative z-10 font-serif text-2xl font-bold text-accent">
+                    <span
+                      className="relative z-10 font-serif text-2xl font-bold"
+                      style={{ color: project.logoColor ?? "var(--accent)" }}
+                    >
                       {project.name[0]}
                     </span>
                   </div>

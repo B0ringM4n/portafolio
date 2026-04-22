@@ -15,6 +15,7 @@ export interface Project {
   sourceUrl?: string;
   demoUrl?: string;
   year?: string;
+  logoColor?: string;
 }
 
 export interface Technology {
